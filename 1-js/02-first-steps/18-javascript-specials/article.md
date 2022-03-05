@@ -1,51 +1,50 @@
-# JavaScript specials
+# JavaScript đặc biệt
 
-This chapter briefly recaps the features of JavaScript that we've learned by now, paying special attention to subtle moments.
+Chương này tóm tắt ngắn gọn các tính năng của JavaScript mà chúng ta đã học đến bây giờ, đặc biệt chú ý đến những khoảnh khắc tinh tế.
 
-## Code structure
+## Cấu trúc mã
 
-Statements are delimited with a semicolon:
-
-```js run no-beautify
-alert('Hello'); alert('World');
-```
-
-Usually, a line-break is also treated as a delimiter, so that would also work:
+Các câu lệnh được phân tách bằng dấu chấm phẩy:
 
 ```js run no-beautify
-alert('Hello')
-alert('World')
+alert('Chào'); alert('Thế giới');
 ```
 
-That's called "automatic semicolon insertion". Sometimes it doesn't work, for instance:
+Thông thường, dấu ngắt dòng cũng được coi là dấu phân cách, vì vậy điều đó cũng sẽ hoạt động:
+
+```js run no-beautify
+alert('Chào')
+alert('Thế giới')
+```
+
+Đó được gọi là "tự động chèn dấu chấm phẩy". Đôi khi nó không hoạt động, ví dụ:
 
 ```js run
-alert("There will be an error after this message")
+alert("Sẽ có một lỗi sau thông báo này")
 
 [1, 2].forEach(alert)
 ```
 
-Most codestyle guides agree that we should put a semicolon after each statement.
+Hầu hết các hướng dẫn về kiểu mã đều đồng ý rằng chúng ta nên đặt dấu chấm phẩy sau mỗi câu lệnh.
 
-Semicolons are not required after code blocks `{...}` and syntax constructs with them like loops:
-
+Không bắt buộc phải có dấu chấm phẩy sau các khối mã `{...}` và cấu trúc cú pháp với chúng như các vòng lặp:
 ```js
 function f() {
   // no semicolon needed after function declaration
 }
 
 for(;;) {
-  // no semicolon needed after the loop
+  // không cần dấu chấm phẩy sau vòng lặp
 }
 ```
 
-...But even if we can put an "extra" semicolon somewhere, that's not an error. It will be ignored.
+... Nhưng ngay cả khi chúng ta có thể đặt một dấu chấm phẩy "thừa" ở đâu đó, đó không phải là một lỗi. Nó sẽ bị bỏ qua.
 
-More in: <info:structure>.
+Thêm trong: <info:structure>.
 
-## Strict mode
+## Chế độ nghiêm ngặt
 
-To fully enable all features of modern JavaScript, we should start scripts with `"use strict"`.
+Để kích hoạt đầy đủ tất cả các tính năng của JavaScript hiện đại, chúng ta nên bắt đầu các tập lệnh với `"use strict"`.
 
 ```js
 'use strict';
@@ -53,35 +52,35 @@ To fully enable all features of modern JavaScript, we should start scripts with 
 ...
 ```
 
-The directive must be at the top of a script or at the beginning of a function body.
+Chỉ thị phải ở đầu tập lệnh hoặc ở đầu thân chức năng.
 
-Without `"use strict"`, everything still works, but some features behave in the old-fashion, "compatible" way. We'd generally prefer the modern behavior.
+Không có `"use strict"`, mọi thứ vẫn hoạt động, nhưng một số tính năng hoạt động theo cách cũ, "tương thích". Chúng tôi thường thích hành vi hiện đại hơn.
 
-Some modern features of the language (like classes that we'll study in the future) enable strict mode implicitly.
+Một số tính năng hiện đại của ngôn ngữ (như các lớp học mà chúng ta sẽ nghiên cứu trong tương lai) bật chế độ nghiêm ngặt một cách ngầm định.
 
-More in: <info:strict-mode>.
+Thêm trong: <info:strict-mode>.
 
-## Variables
+## Biến
 
-Can be declared using:
+Có thể được khai báo bằng cách sử dụng:
 
 - `let`
-- `const` (constant, can't be changed)
-- `var` (old-style, will see later)
+- `const` (không đổi, không thể thay đổi)
+- `var` (kiểu cũ, sẽ gặp lại sau)
 
-A variable name can include:
-- Letters and digits, but the first character may not be a digit.
-- Characters `$` and `_` are normal, on par with letters.
-- Non-Latin alphabets and hieroglyphs are also allowed, but commonly not used.
+Một tên biến có thể bao gồm:
+- Các chữ cái và chữ số, nhưng ký tự đầu tiên có thể không phải là chữ số.
+- Các ký tự `$` và `_` là bình thường, ngang hàng với các chữ cái.
+- Bảng chữ cái không phải Latinh và chữ tượng hình cũng được phép sử dụng, nhưng không được sử dụng phổ biến.
 
-Variables are dynamically typed. They can store any value:
+Các biến được nhập động. Chúng có thể lưu trữ bất kỳ giá trị nào:
 
 ```js
 let x = 5;
 x = "John";
 ```
 
-There are 8 data types:
+Có 8 kiểu dữ liệu:
 
 - `number` for both floating-point and integer numbers,
 - `bigint` for integer numbers of arbitrary length,
